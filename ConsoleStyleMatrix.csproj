@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BannerMeltingAnimation.cs" />
+    <Compile Include="Classes\BannerParticle.cs" />
     <Compile Include="Classes\ConsoleManager.cs" />
     <Compile Include="Classes\Drops.cs" />
     <Compile Include="Classes\MatrixColumn.cs" />
@@ -55,6 +57,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Classes\Json\theme\the-unnamed.omp.json" />
+    <None Include="CUSTOMIZATION_GUIDE.md" />
+    <None Include="IMPLEMENTATION_SUMMARY.md" />
+    <None Include="MELTING_ANIMATION.md" />
     <None Include="REDIMENSIONAMENTO.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

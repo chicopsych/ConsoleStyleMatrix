@@ -92,5 +92,24 @@ namespace ConsoleStyleMatrix.Classes
 		{
 			return (string[])bannerLines.Clone();
 		}
+
+		/// <summary>
+		/// Calcula a posição X inicial para centralizar o banner
+		/// </summary>
+		/// <param name="consoleWidth">Largura do console</param>
+		/// <returns>Posição X inicial</returns>
+		public static int GetCenteredStartX(int consoleWidth)
+		{
+			int bannerWidth = bannerLines[0].Length;
+			return Math.Max(0, (consoleWidth - bannerWidth) / 2);
+		}
+
+		/// <summary>
+		/// Retorna a largura do banner em caracteres
+		/// </summary>
+		public static int GetBannerWidth()
+		{
+			return bannerLines[0].Length;
+		}
 	}
 }

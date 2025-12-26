@@ -14,9 +14,9 @@ namespace ConsoleStyleMatrix
 
 			try
 			{
-				// Cria e executa a animação Matrix com banner inicial
+				// Cria e executa a animação Matrix com banner derretendo
 				matrixRain = new MatrixRain();
-				matrixRain.RunWithBanner();
+				matrixRain.RunWithMeltingBanner();
 			}
 			catch (Exception ex)
 			{

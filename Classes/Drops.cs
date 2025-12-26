@@ -223,6 +223,43 @@ namespace ConsoleStyleMatrix.Classes
 		}
 
 		/// <summary>
+		/// Executa a animação com efeito de derretimento do banner no estilo Matrix
+		/// </summary>
+		public void RunWithMeltingBanner()
+		{
+			// 1. Exibe o banner estático por 2 segundos
+			Console.Clear();
+			MeltingName.DisplayBannerCentered(ConsoleColor.Green);
+			Console.WriteLine();
+			Console.ForegroundColor = ConsoleColor.DarkGreen;
+			Console.WriteLine("                    Pressione ESC para sair...");
+			Console.ResetColor();
+			Thread.Sleep(2000);
+
+			// 2. Reconfigura o console para maximizado e limpa
+			_consoleManager.MaximizeConsoleWindow();
+			Console.Clear();
+
+			// 3. Reinicializa recursos com o tamanho correto
+			InitializeResources();
+
+			// 4. Executa animação de derretimento
+			BannerMeltingAnimation meltingAnimation = new BannerMeltingAnimation(
+				_renderer,
+				_width,
+				_height
+			);
+			meltingAnimation.Animate();
+
+			// 5. Limpa tela e reinicializa colunas para Matrix Rain
+			Console.Clear();
+			InitializeResources();
+
+			// 6. Inicia a animação Matrix Rain normal
+			Run();
+		}
+
+		/// <summary>
 		/// Limpa recursos e restaura console
 		/// </summary>
 		private void Cleanup()
